@@ -8,10 +8,5 @@
         name:
           - openscap
           - openscap-scanner
-        state: latest
-        
-    - name: install openscap security guide
-      yum:
-        name: scap-security-guide-0.1.54-5.el8
-        allow_downgrade: yes
-        
+          - scap-security-guide
+        state: latest      
