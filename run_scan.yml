@@ -1,0 +1,9 @@
+---
+- name: Install and run Compliance
+  hosts: all
+
+  tasks: 
+    - name: insights complaince
+      import_role:
+        name: redhat.insights.compliance
+        tasks_from: run
