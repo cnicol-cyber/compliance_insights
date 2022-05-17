@@ -1,9 +1,17 @@
 ---
-- name: Install and run Compliance
+- name: Install packages
   hosts: all
 
   tasks: 
-    - name: insights complaince
-      import_role:
-        name: redhat.insights.compliance
-        tasks_from: install
+    - name: install openscap and openscap scanner
+      yum:
+        name:
+          - openscap
+          - openscap-scanner
+        state: latest
+        
+    - name: install openscap security guide
+      yum:
+        name: scap-security-guide-0.1.54-5.el8
+        allow_downgrade: yes
+        
